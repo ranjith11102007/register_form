@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="theme-toggle" id="themeToggle" role="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </div>
+    <header>
+      <h1>Student Registration</h1>
+      <p>Fill in the details below to register a student</p>
+    </header>
+
+    <form id="studentForm" class="card">
+      <h2>Basics</h2>
+      <div class="grid">
+        <div class="field">
+          <label for="fullName">Full Name <span class="req">*</span></label>
+          <input type="text" id="fullName" placeholder="e.g. Priya Sharma">
+          <div class="error-msg" id="err-fullName"></div>
+        </div>
+        <div class="field">
+          <label for="dob">Date of Birth <span class="req">*</span></label>
+          <input type="date" id="dob">
+          <div class="error-msg" id="err-dob"></div>
+        </div>
+        <div class="field">
+          <label for="gender">Gender <span class="req">*</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+          <div class="error-msg" id="err-gender"></div>
+        </div>
+        <div class="field">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" placeholder="e.g. priya@example.com">
+          <div class="error-msg" id="err-email"></div>
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span class="req">*</span></label>
+          <input type="tel" id="phone" placeholder="e.g. 9876543210">
+          <div class="error-msg" id="err-phone"></div>
+        </div>
+      </div>
+
+      <h2>Address</h2>
+      <div class="grid">
+        <div class="field field-full">
+          <label for="street">Street Address <span class="req">*</span></label>
+          <input type="text" id="street" placeholder="House no, street name">
+          <div class="error-msg" id="err-street"></div>
+        </div>
+        <div class="field">
+          <label for="city">City <span class="req">*</span></label>
+          <input type="text" id="city" placeholder="e.g. Bengaluru">
+          <div class="error-msg" id="err-city"></div>
+        </div>
+        <div class="field">
+          <label for="state">State <span class="req">*</span></label>
+          <input type="text" id="state" placeholder="e.g. Karnataka">
+          <div class="error-msg" id="err-state"></div>
+        </div>
+        <div class="field">
+          <label for="zip">ZIP / Postal Code <span class="req">*</span></label>
+          <input type="text" id="zip" placeholder="e.g. 560001">
+          <div class="error-msg" id="err-zip"></div>
+        </div>
+      </div>
+
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="field">
+          <label for="course">Course / Department <span class="req">*</span></label>
+          <input type="text" id="course" placeholder="e.g. B.Tech CSE">
+          <div class="error-msg" id="err-course"></div>
+        </div>
+        <div class="field">
+          <label for="semester">Semester</label>
+          <select id="semester">
+            <option value="">Select semester</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="enrollNo">Enrollment Number <span class="req">*</span></label>
+          <input type="text" id="enrollNo" placeholder="e.g. 2024CSE0123">
+          <div class="error-msg" id="err-enrollNo"></div>
+        </div>
+      </div>
+
+      <h2>Guardian / Parent</h2>
+      <div class="grid">
+        <div class="field">
+          <label for="guardianName">Guardian Name <span class="req">*</span></label>
+          <input type="text" id="guardianName" placeholder="Parent / guardian full name">
+          <div class="error-msg" id="err-guardianName"></div>
+        </div>
+        <div class="field">
+          <label for="guardianPhone">Guardian Contact <span class="req">*</span></label>
+          <input type="tel" id="guardianPhone" placeholder="e.g. 9876543210">
+          <div class="error-msg" id="err-guardianPhone"></div>
+        </div>
+      </div>
+
+      <h2>Extras</h2>
+      <div class="grid">
+        <div class="field">
+          <label>Photo</label>
+          <div class="photo-row">
+            <div class="photo-preview" id="photoPreview">No photo</div>
+            <input type="file" id="photo" accept="image/*">
+          </div>
+        </div>
+        <div class="field">
+          <label for="bloodGroup">Blood Group</label>
+          <select id="bloodGroup">
+            <option value="">Select blood group</option>
+            <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+            <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Hobbies</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="hobby" value="Reading"> Reading</label>
+            <label><input type="checkbox" name="hobby" value="Sports"> Sports</label>
+            <label><input type="checkbox" name="hobby" value="Music"> Music</label>
+            <label><input type="checkbox" name="hobby" value="Coding"> Coding</label>
+            <label><input type="checkbox" name="hobby" value="Art"> Art</label>
+          </div>
+        </div>
+        <div class="field field-full">
+          <label for="comments">Comments / Notes</label>
+          <textarea id="comments" placeholder="Any additional information..."></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn-submit">Register Student</button>
+        <button type="button" class="btn-reset" id="btnReset">Reset Form</button>
+      </div>
+    </form>
+
+    <div class="card">
+      <div class="records-header">
+        <h2>Registered Students</h2>
+        <div class="count" id="recordCount"></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Course</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="recordsBody"></tbody>
+        </table>
+      </div>
+      <div class="empty-note" id="emptyNote">No students registered yet.</div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
